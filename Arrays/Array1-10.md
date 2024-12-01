@@ -1,4 +1,4 @@
-# 1 Largest Element in an Array  [GFG](https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1)
+# 1 Largest Element in an Array  [GFG Link](https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1)
 
 ```java
 int LargestElementArray(int[] arr){  
@@ -70,3 +70,27 @@ int SecondLargestElementArray(int[] arr){
 ```
 
 ___
+
+
+# 3 Check if array is sorted [GFG Link](https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1)
+
+### Optimal Solution : 
+ -  Time Complexity  - O(n)
+
+```java
+boolean ArraySortedOrNot(int[] arr){  
+  
+    for (int i = 1; i < arr.length; i++){  
+        if (arr[i] >= arr[i-1]){  
+        }else {  
+            return false;  
+        }  
+    }  
+   return true;  
+}
+
+
+```
+
+___
+
