@@ -40,11 +40,14 @@ int SecondLargestElementArray(int[] arr){
     /* Return the Aswer */
     return secondLargest;  
 }
+
+
+
 ```
 
 ### Optimal Solution : 
 
- - Time Complexity - O(n²)
+ - Time Complexity - O(n)
 ```java
 int SecondLargestElementArray(int[] arr){  
     int largest = arr[0];  
@@ -60,6 +63,9 @@ int SecondLargestElementArray(int[] arr){
     }  
     return secondLargest;  
 }
+
+
+
 
 ```
 
