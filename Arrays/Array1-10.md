@@ -37,7 +37,7 @@ int SecondLargestElementArray(int[] arr){
         }  
     }  
     
-    /* Return the Aswer */
+    /* Return the Answer */
     return secondLargest;  
 }
 
