@@ -129,41 +129,78 @@ ___
 
  - Time Complexity - O(n)
 ```java
-public  void  rotate(int[] nums, int  k) {
+ public static void rightRotated(int[] arr, int k){
+        int size = arr.length;
+        k = k % size;
+        reverse(arr,0,size-1);
+        reverse(arr,0,k-1);
+        reverse(arr,k,size-1);
+    }
 
-int  size = nums.length;
-
-k = k % size;
-
-reverse(nums,0,size-1);
-
-reverse(nums,0,k-1);
-
-reverse(nums,k,size-1);
-
-}
-
-public  void  reverse(int[] arr, int  start, int  end){
-
-while (start < end ){
-
-int  temp = arr[start];
-
-arr[start] = arr[end];
-
-arr[end] = temp;
-
-start++;
-
-end--;
-
-}
-
-}
-
+    public static void reverse(int[] arr, int start, int end){
+        while (start < end ){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
 ```
 
 ___
+
+
+
+
+# 6 Move Zeroes [LeetCode ](https://leetcode.com/problems/move-zeroes/description/)
+
+
+
+
+### Better Solution: 
+
+ - Time Complexity - O(n²)
+
+```java
+
+ void moveZeros(int[] arr){  
+    for (int i = 1; i < arr.length; i++){  
+        for (int j = 0; j < arr.length-i; j++ ){  
+            if (arr[j] == 0) {  
+                int temp = arr[j];  
+                arr[j] = arr[j +1];  
+                arr[j+1] = temp;  
+            }  
+        }  
+    }  
+}
+```
+
+
+### Optimal  Solution :
+
+ - Time Complexity - O(n)
+```java 
+
+void moveZeros(int[] nums){  
+   int j = 0;  
+   for (int i = 1; i < nums.length; i++){  
+       if(nums[i] != 0){  
+           int temp = nums[j];  
+           nums[j] = nums[i];  
+           nums[i] = temp;  
+       }  
+       if (nums[j] != 0){  
+           j++;  
+       }  
+   }  
+}
+```
+
+
+___
+
 
 
 
