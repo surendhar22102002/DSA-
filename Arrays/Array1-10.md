@@ -202,5 +202,60 @@ void moveZeros(int[] nums){
 ___
 
 
+# 7 Union of Two Sorted Arrays with Duplicate Elements [GKG Link](https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1)
+
+  
+  
+
+### Optimal Solution :
+
+  
+
+- Time Complexity - O(n²)
+
+```java
+
+public static ArrayList<Integer> unionOfArray(int[] arr1, int[] arr2){  
+    int i = 0;  
+    int j = 0;  
+  
+    ArrayList<Integer> newArray = new ArrayList<>();  
+  
+    while (i < arr1.length && j < arr2.length){  
+        if (arr1[i] <= arr2[j]){  
+            if (newArray.isEmpty() || newArray.get(newArray.size() -1)!= arr1[i]){  
+                newArray.add(arr1[i]);  
+            }  
+            i++;  
+        } else {  
+            if (newArray.isEmpty() || newArray.get(newArray.size() -1) != arr2[j]){  
+                newArray.add(arr2[j]);  
+            }  
+            j++;  
+        }  
+    }  
+  
+    while (i < arr1.length) {  
+        if (newArray.isEmpty() || newArray.get(newArray.size() -1) != arr1[i]){  
+            newArray.add(arr1[i]);  
+        }  
+        i++;  
+    }  
+  
+    while (j < arr2.length){  
+        if (newArray.isEmpty() || newArray.get(newArray.size() -1) != arr2[j]){  
+            newArray.add(arr2[j]);  
+        }  
+        j++;  
+    }  
+  
+    return newArray;  
+}
+```
+
+  
+  
+
+___
 
 
